@@ -1,0 +1,527 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-modify {
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.04);
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+.navbar {
+    border-radius: 0;
+}
+.lout{
+    margin-top: 15px;
+}
+ul {
+    padding-left: 0;
+}
+li {
+    list-style: none;
+    margin-top: 25px;
+}
+.first-row a.btn.btn-primary {
+    background: #4E6CFE;
+    border: none;
+    width: 100%;
+    text-align: left;
+    line-height: 25px;
+}
+.first-row {
+    padding-right: 45px;
+    padding-top: 20px;
+    color: #ccc;
+    font-weight: 300;
+    box-shadow: 2px 0px 5px -2px #888;
+    min-height: 100vh;
+    z-index: 1;
+}
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+   
+}
+.second-row {
+    background: #F5F6FA;
+    min-height: 100vh;
+    padding-top: 15px;
+   
+}
+.second-row h6{
+    font-size: 12px;
+    color: #ccc;
+    font-weight: 300;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+h6 img {
+    margin-top: -5px;
+}
+.forth-row {
+    background: #F5F6FA;
+    min-height: 100vh;
+    padding-left: 35px;
+    padding-right: 35px;
+    opacity: 0.3;
+}
+.forth-row .iconc {
+    height: 20px;
+}
+.secondc{
+    background-color: #F5F6FA;
+    height: 60px;
+    padding-left: 30px;
+}
+.navbar{
+    margin-bottom: 0;
+}
+
+i.fas.fa-circle {
+    color: #e7e9f1;
+    font-size: 24px;
+    float: left;
+    margin-right: 10px;
+    margin-top: -3px
+}
+.first-row li:first-child .fa-circle {
+    color: #FDB5E3;
+}
+.second-row li:first-child .fa-circle{
+    color: #FDB5E3;
+}
+.second-row li:nth-child(2) .fa-circle{
+    color: #B8D883;
+}
+.second-row li:nth-child(3) .fa-circle{
+    color: #B9B4F6;
+}
+.second-row li:nth-child(4) .fa-circle{
+    color: #F0DEBE;
+}
+.second-row li:nth-child(5) .fa-circle{
+    color: #e7e9f1;
+}
+.second-row li:nth-child(6) .fa-circle{
+    color: #C2F0D8;
+}
+.second-row li:nth-child(2) .fa-star{
+    color: #4d7cfe;
+}
+i.far.fa-star{
+    color: #ccc;
+}
+.enjoy-css {
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    margin: 0 auto;
+    border: .5px solid rgb(232, 238, 241);
+    border-radius: 28px;
+    font: normal 14px/28px "Advent Pro", Helvetica, sans-serif;
+    color: rgb(119, 126, 128);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,0);
+    margin-top: 7px;
+  }
+  
+  /* enable absolute positioning */
+  .enjoy-cssx {
+    width: 100px;
+    height: 35px;
+    border-radius: 28px;
+    font: normal 14px/28px "Advent Pro", Helvetica, sans-serif;
+    background: rgb(255, 255, 255);
+  }
+  
+  .inner-addon { 
+      position: relative; 
+  }
+  
+  /* style icon */
+  .inner-addon .iconc {
+    position: absolute;
+    padding: 13px;
+    pointer-events: none;
+  }
+  
+  /* align icon */
+  .left-addon .iconc  { left:  0px;}
+  .right-addon .iconc {
+    right: 0px;
+    left: -5px;
+    top: -6px;
+}
+  
+  /* add padding  */
+  .left-addon input  { padding-left:  30px; }
+  .right-addon input { padding-right: 30px; }
+  
+  .navbar {
+    z-index: 1;
+    min-height: 60px;
+  
+}
+.iconc{
+   float: left;
+    margin-right: 5px;
+}
+#loading {
+    -webkit-animation: rotation 2s infinite linear;
+}
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
+.navbar-default .navbar-brand {
+    color: #666;
+    font-size: 18px;
+    padding-top: 20px;
+}
+a.navbar-brand img {
+    margin-top: -3px;
+}
+button.btn.btn-primary.btn-lg {
+    position: absolute;
+    bottom: -28px;
+    right: 25px;
+    z-index: 99;
+    background: #4d7cfe;
+    border: 0;
+    border-radius: 50%;
+    height: 60px;
+    width: 62px;
+    text-align: center;
+    padding-left: 18px;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.51);
+box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.51);
+}
+
+
+  #page-wrapper input {
+    width: 100%;
+    padding: 0.3em 0.5em;
+    font-size: 14px;
+    border-radius: 40px;
+    border: 1px solid #D9D9D9;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    padding-left: 35px;
+    height: 35px;
+  }
+  
+  #page-wrapper button {
+    display: inline-block;
+    border-radius: 3px;
+    border: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8em;
+    background: #69c773;
+    border-bottom: 1px solid #498b50;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #page-wrapper button:hover, button:focus {
+    opacity: 0.75;
+    cursor: pointer;
+  }
+  
+  #page-wrapper button:active {
+    opacity: 1;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+  }
+  label.control-label {
+    color: #5C5C5E;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 5px;
+    padding: 0;
+}
+i.fas.fa-star {
+    font-size: 6px;
+    color: red;
+}
+input#colFormLabel {
+    border-radius: 40px;
+    padding-left: 35px !important;
+    background: #eeeeee;
+    border: 0;
+}
+input.colFormLabel {
+    border-radius: 40px;
+    padding-left: 35px !important;
+    background: #eeeeee;
+    border: 0;
+}
+.listing{
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #5C5C5E;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.conectgoogle {
+    padding-left: 15px;
+    color: #5C5C5E;
+    font-weight: 300;
+    margin-top: 15px;
+}
+.report {
+    background: #7072C1;
+    color: #fff;
+    margin-top: 40px;
+    border: 0;
+    border-radius: 5px;
+}
+.verifylisting {
+    background: #4D7DFC;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 0;
+}
+.forth-row h6 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #7b7b7d;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+}
+input:focus{
+    outline: none;
+}
+button.btn.btn-primary.btn-lg:focus{
+    outline: none;
+}
+input.form-control.enjoy-css {
+    text-align: left;
+    padding-left: 35px;
+}
+div#page-wrapper .iconc {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    color: #c9cbd2;
+    font-size: 20px;
+}
+div#page-wrapper {
+    position: relative;
+}
+
+.form-group.fs img {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+}
+.form-group.row.fsp img {
+    position: absolute;
+    left: 20px;
+    top: 5px;
+}
+.form-group.row.fsp {
+    position: relative;
+}
+.gauth span:first-child {
+    float: left;
+    padding-right: 20px;
+    margin-top: 3px;
+}
+.gauth {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #5086ef;
+}
+.verifylisting a{
+    color: #fff;
+}
+.report a{
+    color: #fff;
+}
+a:hover{
+    text-decoration: none;
+}
+a:focus{
+    outline: none;
+    text-decoration: none;
+}
+a.active {
+    color: #666 !important;
+}
+.first-row ul li a {
+    color: #ccc;
+}
+.second-row ul li a {
+    color: #ccc;
+}
+.first-row ul li a:hover {
+    color: #666 !important;
+}
+.second-row ul li {
+    height: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.second-row ul li:hover {
+    background: #fff;
+    color: #666 !important;
+}
+.second-row ul li a:hover {
+  
+    color: #666 !important;
+}
+.third-row {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.containerc input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.containerc:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerc input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.containerc {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #cecaca;
+    font-weight: 300;
+}
+/* Show the checkmark when checked */
+.containerc input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerc .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.third-row h6{
+    color: #ccc;
+    font-weight: 300;
+    font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+    .pull-right.lout {
+        position: absolute;
+        top: -112px;
+        right: 0;
+    }
+    .first-row {
+        padding-top: 35px;
+    }
+    .second-row {
+        min-height: auto;
+        margin-top: 30px;
+    }
+    .gauth {
+        margin-bottom: 240px;
+    }
+  }
+  input.btn.btn-primary.pull-right.savebtn {
+    background: #4E6CFE;
+    border: none;
+    line-height: 25px;
+    margin-top: -15px;
+    width: 100px;
+    text-align: center;
+}
+.ms-drop ul > li {
+    margin-top: 0;
+}
+.ms-parent{
+    width: 100% !important;
+}
+.ms-choice {
+    height: 34px;
+    border-radius: 40px;
+    background-color: #eee;
+    border: none;
+}
+li.ms-select-all {
+    display: none !important;
+}
+.ph{
+    left: 10px;
+    top: 3px !important;
+}
+.btn-info {
+    color: #fff;
+    background-color: #5085ef;
+    border-color: #5085ef;
+}
+.btn-info.focus, .btn-info:focus {
+    color: #fff;
+    background-color: #5086ef;
+    border-color: #5086ef;
+}
+.btn-info:hover {
+    color: #fff;
+    background-color: #5086ef;
+    border-color: #5086ef;
+}

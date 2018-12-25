@@ -1,0 +1,110 @@
+<pre>Illuminate\Notifications\DatabaseNotification Object
+(
+    [incrementing] =&gt; 
+    [table:protected] =&gt; notifications
+    [guarded:protected] =&gt; Array
+        (
+        )
+
+    [casts:protected] =&gt; Array
+        (
+            [data] =&gt; array
+            [read_at] =&gt; datetime
+        )
+
+    [connection:protected] =&gt; mysql
+    [primaryKey:protected] =&gt; id
+    [keyType:protected] =&gt; int
+    [with:protected] =&gt; Array
+        (
+        )
+
+    [withCount:protected] =&gt; Array
+        (
+        )
+
+    [perPage:protected] =&gt; 15
+    [exists] =&gt; 1
+    [wasRecentlyCreated] =&gt; 
+    [attributes:protected] =&gt; Array
+        (
+            [id] =&gt; f0502d4a-acda-433a-af60-daaaef3348d1
+            [type] =&gt; App\Notifications\AdminRequirementNotification
+            [notifiable_type] =&gt; App\User
+            [notifiable_id] =&gt; 97
+            [data] =&gt; {"adminrequirement":{"name":"asd","email":"27ksandip@gmail.com","area":null,"budget":null,"location":null,"message":null,"type":"Student","mobile_number":"9808731037","updated_at":"2018-12-10 16:48:02","created_at":"2018-12-10 16:48:02","id":22}}
+            [read_at] =&gt; 
+            [created_at] =&gt; 2018-12-10 16:48:02
+            [updated_at] =&gt; 2018-12-10 16:48:02
+            [commented_by] =&gt; 
+            [project_id] =&gt; 
+            [project_comment_id] =&gt; 
+            [article_id] =&gt; 
+            [article_comment_id] =&gt; 
+            [group_post_comment_id] =&gt; 
+            [status] =&gt; 
+        )
+
+    [original:protected] =&gt; Array
+        (
+            [id] =&gt; f0502d4a-acda-433a-af60-daaaef3348d1
+            [type] =&gt; App\Notifications\AdminRequirementNotification
+            [notifiable_type] =&gt; App\User
+            [notifiable_id] =&gt; 97
+            [data] =&gt; {"adminrequirement":{"name":"asd","email":"27ksandip@gmail.com","area":null,"budget":null,"location":null,"message":null,"type":"Student","mobile_number":"9808731037","updated_at":"2018-12-10 16:48:02","created_at":"2018-12-10 16:48:02","id":22}}
+            [read_at] =&gt; 
+            [created_at] =&gt; 2018-12-10 16:48:02
+            [updated_at] =&gt; 2018-12-10 16:48:02
+            [commented_by] =&gt; 
+            [project_id] =&gt; 
+            [project_comment_id] =&gt; 
+            [article_id] =&gt; 
+            [article_comment_id] =&gt; 
+            [group_post_comment_id] =&gt; 
+            [status] =&gt; 
+        )
+
+    [changes:protected] =&gt; Array
+        (
+        )
+
+    [dates:protected] =&gt; Array
+        (
+        )
+
+    [dateFormat:protected] =&gt; 
+    [appends:protected] =&gt; Array
+        (
+        )
+
+    [dispatchesEvents:protected] =&gt; Array
+        (
+        )
+
+    [observables:protected] =&gt; Array
+        (
+        )
+
+    [relations:protected] =&gt; Array
+        (
+        )
+
+    [touches:protected] =&gt; Array
+        (
+        )
+
+    [timestamps] =&gt; 1
+    [hidden:protected] =&gt; Array
+        (
+        )
+
+    [visible:protected] =&gt; Array
+        (
+        )
+
+    [fillable:protected] =&gt; Array
+        (
+        )
+
+)
+                                                hello                                                </pre>

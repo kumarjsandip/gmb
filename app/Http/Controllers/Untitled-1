@@ -1,0 +1,400 @@
+@extends('layouts.dashboard')
+
+@section('content')
+
+    
+    <div class="col-md-3 col-sm-3 col-xs-12 second-row">
+<div class="row">
+        <h6><img class="iconc" src="{{ asset(url('public/icons/date.png')) }}" />Date</h6>
+        <ul>
+            @foreach($projectsc as $project)
+            @foreach($project->campaigns as $campaign)
+        <li><a href="{{ asset(url('home/campain/create/detail/'.$project->id )) }}?campaign={{ $campaign->id }}"><i class="fas fa-circle"></i> {{ $campaign->campaignname }} <i class="far fa-star pull-right"></i></a></li>
+            @endforeach
+            @endforeach
+        </ul>
+    </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 third-row">
+            <div class="">
+                    {{ Form::open(array('url' => 'home/project/campaign/data/save/'.Request()->campaign)) }}
+                <h5 style="color: #666;
+                margin-top: 25px;"><?php echo $cname = DB::table('campaigns')->where('id',Request()->campaign)->pluck('campaignname')->first(); ?>
+            <input type="submit" value="Save" class="btn btn-primary pull-right savebtn">    
+            </h5>
+                <hr>
+                <br>
+               <?php 
+                $tabledata = DB::table('projectcampaigntables')->where('campaign_id',Request()->campaign)->first();
+               ?>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="email">Category</label>
+                    <div class="col-sm-10">
+                        <div id="page-wrapper">
+                            <img class="iconc" src="{{ asset(url('public/icons/search.png')) }}" />
+                        <input  name="category" required value="@if(!empty($tabledata)) {{ $tabledata->category }} @endif" type="text" id="default" list="category" placeholder="">
+                            <?php $categories = DB::table('categories')->get(); ?>
+                            <datalist id="category">
+                                @foreach ($categories as $item)
+                                <option value="{{ $item->displayName }}"> </option>
+                                    @endforeach
+                            </datalist>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row fs">
+                    <label for="colFormLabel" class="col-sm-2 control-label">City</label>
+                    <div class="col-sm-10">
+                        <img class="iconc" src="{{ asset(url('public/icons/search.png')) }}" />
+                        <input type="text" required class="form-control" value="@if(!empty($tabledata)) {{ $tabledata->city }} @endif" name="city" id="colFormLabel">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 control-label">City Source</label>
+                    <div class="col-sm-10">
+                            <label class="containerc">Loopnet
+                                    <input  name="citytype" @if(empty($tabledata->citytype)) checked @endif value="loopnet" @if(!empty($tabledata)) @if($tabledata->citytype == "loopnet") checked @endif @endif type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  <label class="containerc">42Floors
+                                    <input name="citytype" value="42Follows" @if(!empty($tabledata))  @if($tabledata->citytype == "42Follows") checked @endif @endif  type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  <label class="containerc">Local
+                                    <input name="citytype" value="Local" @if(!empty($tabledata))  @if($tabledata->citytype == "Local") checked @endif @endif type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                      
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabel" style="padding: 0;" class="col-sm-2 control-label">Re verify</label>
+                    <div class="col-sm-10">
+                              <label class="containerc">
+                                    <input name="reverify" value="Yes" @if(!empty($tabledata))  @if($tabledata->reverify == "Yes") checked @endif @endif type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                             
+                    </div>
+                </div>
+                
+                <div class="form-group row fsp">
+                    <label for="colFormLabel" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <img class="iconc" src="{{ asset(url('public/icons/search.png')) }}" />
+                        <input type="text" name="phone" value="@if(!empty($tabledata)) {{ $tabledata->phone }} @endif" class="form-control colFormLabel">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                       
+                        <label class="containerc">Api
+                                <input name="phonetype" @if(empty($tabledata->phonetype)) checked @endif value="Api" @if(!empty($tabledata))  @if($tabledata->phonetype == "Api") checked @endif @endif type="checkbox">
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="containerc">Pivo
+                                <input name="phonetype" value="Pivo" @if(!empty($tabledata))  @if($tabledata->phonetype == "Pivo") checked @endif @endif type="checkbox">
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="containerc">Twilio
+                                <input name="phonetype" value="Twilio" @if(!empty($tabledata))  @if($tabledata->phonetype == "Twilio") checked @endif @endif type="checkbox">
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="containerc">Bandwidht
+                                    <input name="phonetype" value="Bandwidht" @if(!empty($tabledata))  @if($tabledata->phonetype == "Bandwidht") checked @endif @endif type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 control-label">Naming</label>
+                    <div class="col-sm-10">
+                              <label class="containerc">Templates
+                                <input name="naming" @if(empty($tabledata->naming)) checked @endif value="Templates" @if(!empty($tabledata))  @if($tabledata->naming == "Templates") checked @endif @endif type="checkbox">
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="containerc">Industry Mashup
+                                    <input name="naming" value="Industry Mashup" @if(!empty($tabledata))  @if($tabledata->naming == "Industry Mashup") checked @endif @endif type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                             
+                    </div>
+                </div>
+                <div class="form-group row fsp">
+                    <label for="colFormLabel" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        
+                    <input type="email" style="padding-left: 10px !important;" required name="email" value="@if(!empty($tabledata)) {{ $tabledata->email }} @endif" class="form-control colFormLabel">
+                    </div>
+                </div>
+                <div class="form-group row fsp">
+                    <label for="colFormLabel" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-9">
+                       
+                        <input type="password" style="padding-left: 10px !important;" required name="password" value="@if(!empty($tabledata)) {{ $tabledata->password }} @endif" class="form-control colFormLabel">
+                    </div>
+                </div>
+                <div class="form-group row fsp">
+                    <label for="colFormLabel" class="col-sm-3 control-label">Verification Email</label>
+                    <div class="col-sm-9">
+                       
+                        <input type="email" style="padding-left: 10px !important;" required name="vemail" value="@if(!empty($tabledata)) {{ $tabledata->vemail }} @endif" class="form-control colFormLabel">
+                    </div>
+                </div>
+
+                <hr>
+                <div class="col-md-12 col-xs-12">
+                    <label for="colFormLabel" class="control-label">CSV Output</label>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h6>Bulk Upload</h6>
+                    <img class="iconc" src="{{ asset(url('public/icons/s1.png')) }}" />
+                    <img class="iconc" src="{{ asset(url('public/icons/s2.png')) }}" />
+                    <img class="iconc" src="{{ asset(url('public/icons/s3.png')) }}" />
+                    <img class="iconc" src="{{ asset(url('public/icons/s4.png')) }}" />
+    
+                </div>
+                <div class="col-md-6 col-xs-12" style="border-left: 1px solid #f5f6fa;">
+                    <h6>API</h6>
+                    <div class="col-nd-12">
+                        <div class="row">
+                            <div class="col-md-2 ">
+                                <h6>Rows</h6>
+                            </div>
+                            <div class="form-goup col-md-10">
+                                <input type="text" name="api_row" value="@if(!empty($tabledata)) {{ $tabledata->api_row }} @endif" style="width: 85px;
+                            float: right;
+                            border-radius: 40px;
+                            margin-top: -5px;background: #eeeeee;border: 0;"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-md-12 gauth">
+                    <h5><span>Attach GoogleAuth</span><span><img class="iconc" src="{{ asset(url('public/icons/tick.png')) }}" /></span></h5>
+                </div>
+              
+                {{ Form::close() }}
+                <div class="listing col-md-12 verifylisting">
+                    @if(!empty($tabledata))
+                    <a href="{{ asset(url('home/generate/csv/'.$tabledata->id )) }}">
+                        @else 
+                        <a href="#">
+                        @endif
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                               Generate CSV
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <img class="iconc pull-right" src="{{ asset(url('public/icons/loading.png')) }}" />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+            </div>
+    
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 forth-row">
+                <div class="">
+                    <h6>Once listing verification is done, CSV will auto-populate bellow.</h6>
+                    <div class="listing col-md-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <span><img class="iconc" src="{{ asset(url('public/icons/download.png')) }}" /></span>
+                                List1
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="row">
+                                            <div class="col-md-6 col-xs-6">
+                                                <img class="iconc" src="{{ asset(url('public/icons/call.png')) }}" />
+                                                4
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="row">
+                                                    <img class="iconc" src="{{ asset(url('public/icons/location.png')) }}" />
+                                                    2
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing col-md-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <span><img class="iconc" src="{{ asset(url('public/icons/download.png')) }}" /></span>
+                                List1
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="row">
+                                            <div class="col-md-6 col-xs-6">
+                                                <img class="iconc" src="{{ asset(url('public/icons/call.png')) }}" />
+                                                4
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="row">
+                                                    <img class="iconc" src="{{ asset(url('public/icons/location.png')) }}" />
+                                                    2
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing col-md-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <span><img class="iconc" src="{{ asset(url('public/icons/download.png')) }}" /></span>
+                                List1
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="row">
+                                            <div class="col-md-6 col-xs-6">
+                                                <img class="iconc" src="{{ asset(url('public/icons/call.png')) }}" />
+                                                4
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="row">
+                                                    <img class="iconc" src="{{ asset(url('public/icons/location.png')) }}" />
+                                                    2
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conectgoogle col-md-12">
+                        <p>Connecting with googleAuth</p>
+                        <p> <img class="iconc" src="{{ asset(url('public/icons/connect.png')) }}" />Verifying post cards..</p>
+                        <p>Verifying Phone Lising</p>
+                    </div>
+                    <div class="listing col-md-12 report">
+                        <a href="#">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <span><img class="iconc" src="{{ asset(url('public/icons/download.png')) }}" /></span>
+                                    Report
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-md-6 col-xs-6">
+                                                    <img class="iconc" src="{{ asset(url('public/icons/call.png')) }}" />
+                                                    4
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="row">
+                                                        <img class="iconc" src="{{ asset(url('public/icons/location.png')) }}" />
+                                                        2
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="listing col-md-12 verifylisting">
+                    <a href="#">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    ReVerify Listing
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <img class="iconc pull-right" src="{{ asset(url('public/icons/verify.png')) }}" />
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+        
+                </div>
+            </div>
+
+<script>
+    // Get the <datalist> and <input> elements.
+    var dataList = document.getElementById('json-datalist');
+    var input = document.getElementById('ajax');
+
+    // Create a new XMLHttpRequest.
+    var request = new XMLHttpRequest();
+
+    // Handle state changes for the request.
+    request.onreadystatechange = function (response) {
+        if (request.readyState === 4) {
+            if (request.status === 200) {
+                // Parse the JSON
+                var jsonOptions = JSON.parse(request.responseText);
+
+                // Loop over the JSON array.
+                jsonOptions.forEach(function (item) {
+                    // Create a new <option> element.
+                    var option = document.createElement('option');
+                    // Set the value using the item in the JSON array.
+                    option.value = item;
+                    // Add the <option> element to the <datalist>.
+                    dataList.appendChild(option);
+                });
+
+                // Update the placeholder text.
+                input.placeholder = "e.g. datalist";
+            } else {
+                // An error occured :(
+                input.placeholder = "Couldn't load datalist options :(";
+            }
+        }
+    };
+
+
+    $('#createproject').on('click', function () {
+        var projectname = $(".projectname").val();
+
+        var projectdata = {
+            '_token': $("#token").val(),
+            'projectname': $(".projectname").val(),
+        };
+
+        $.ajax({
+            type: "POST",
+            'data': projectdata,
+            'url': "<?php echo url('home/project/create'); ?>",
+            success: function (data) {
+                $(".projectname").val('');
+                $('.alert-success').text(data.success);
+                $(".alert-success").show();
+                $('#projectcreatemessage').hide();
+                setTimeout(function () { $('.modal').modal('hide'); }, 1000);
+                window.setTimeout(function () { location.reload() }, 1000)
+            },
+            error: function (data) {
+                var errors = '';
+                for (datos in data.responseJSON) {
+                    errors += data.responseJSON[datos] + '<br>';
+                }
+                $('#projectcreatemessage').show().html(errors); //this is my div with messages
+            }
+
+        })
+    });
+    $('input[type="checkbox"]').on('change', function() {
+    $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+});
+</script>
+@endsection
